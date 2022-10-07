@@ -34,7 +34,9 @@ const DealHot = () => {
             <Heading>Deal Hot</Heading>
             <VStack spacing="0px" alignItems="flex-end">
                 <Text fontSize="20px">Sắp kết thúc</Text>
-                <Heading>{dayjs.duration(timeleft).format('HH:mm:ss')}</Heading>
+                <Heading textTransform="uppercase">
+                    {dayjs.duration(timeleft).format('HH:mm:ss')}
+                </Heading>
             </VStack>
         </HStack>
     );
@@ -45,7 +47,7 @@ type CountdownProps = {
 };
 const Countdown = ({ title }: CountdownProps) => (
     <Center className={styles['countdown-bar']} p={2}>
-        <Heading>{title}</Heading>
+        <Heading textTransform="uppercase">{title}</Heading>
     </Center>
 );
 
@@ -130,5 +132,11 @@ const MegaSales1010 = () => (
         </VStack>
     </Container>
 );
+
+export const getStaticProps = async () => ({
+    props: {
+        title: 'Mega Sales 10-10',
+    },
+});
 
 export default MegaSales1010;
