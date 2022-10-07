@@ -6,10 +6,9 @@ type ProductProps = {
     src: string;
     href: string;
     alt: string;
-    button?: boolean;
 };
 
-export const Product = ({ src, href, alt, button }: ProductProps) => (
+export const Product = ({ src, href, alt }: ProductProps) => (
     <LinkBox>
         <Flex
             as={LinkOverlay}
@@ -20,21 +19,19 @@ export const Product = ({ src, href, alt, button }: ProductProps) => (
             isExternal
         >
             <ChakraNextImage src={src} alt={alt} />
-            {button && (
-                <Button
-                    size="sm"
-                    textColor="#FFFFFF"
-                    backgroundColor="#172A35"
-                    mt={-1}
-                    borderRadius={0}
-                    _focus={{
-                        textColor: '#FFFFFF',
-                        backgroundColor: '#172A35',
-                    }}
-                >
-                    Mua ngay
-                </Button>
-            )}
+            <Button
+                size="sm"
+                textColor="#FFFFFF"
+                backgroundColor="#172A35"
+                mt={-1}
+                borderRadius={0}
+                _focus={{
+                    textColor: '#FFFFFF',
+                    backgroundColor: '#172A35',
+                }}
+            >
+                Mua ngay
+            </Button>
         </Flex>
     </LinkBox>
 );
